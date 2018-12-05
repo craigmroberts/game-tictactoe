@@ -1,3 +1,1 @@
-<div id="tictactoe-scoreboard" class="page">
-
-</div>
+<div id="tictactoe-scoreboard" class="page"></div>

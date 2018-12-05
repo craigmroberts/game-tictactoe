@@ -5,11 +5,9 @@
   </div>
   <div class="content">
     <p>lang:[sign up and play]</p>
-
     <form>
       <input type="email" name="email" value="" placeholder="lang:[email]">
       <input type="password" name="password" value="" placeholder="lang:[password]">
-
       <input type="submit" data-action="login" value="lang:[login]"/>
     </form>
   </div>
