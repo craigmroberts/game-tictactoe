@@ -8,6 +8,7 @@
   "login" : "Login",
   "play" : "Play",
   "email" : "E-mail",
+	"name" : "Name",
   "first name" : "First name",
   "last name" : "Last name",
   "password" : "Password",

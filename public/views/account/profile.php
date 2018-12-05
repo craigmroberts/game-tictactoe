@@ -5,7 +5,7 @@
   </div>
   <div class="content">
     <p>lang:[lets play!]</p>
-    <div>lang:[welcome back] <span data-dynamic="first_name"></span></div>
+    <div>lang:[welcome back] <span data-dynamic="name"></span></div>
     <br/>
     <span data-action="signout" class="btn">lang:[sign out]</span>
     <span data-action="delete" class="btn btn-red">lang:[delete account]</span>

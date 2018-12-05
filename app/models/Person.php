@@ -3,8 +3,7 @@
   class Person {
 
     protected $id;
-    protected $first_name;
-    protected $last_name;
+    protected $name;
     protected $email;
     protected $password;
     protected $roleID;
@@ -121,16 +120,15 @@
       }
 
       $person->__set('email', $data->email);
-      $person->__set('first_name', $data->first_name);
-      $person->__set('last_name', $data->last_name);
+      $person->__set('name', $data->name);
       $person->__set('password', $data->password);
 
       $db = Database::getInstance();
       $connection = $db->getConnection();
 
-      $sql = "INSERT INTO person (id, email, first_name, last_name, password, role_id) VALUES (?, ?, ?, ?, ?, ?)";
+      $sql = "INSERT INTO person (id, email, name, password, role_id) VALUES (?, ?, ?, ?, ?)";
       $stmt= $connection->prepare($sql);
-      $result = $stmt->execute([$person->id, $person->email, $person->first_name, $person->last_name, $person->password, $person->roleID]);
+      $result = $stmt->execute([$person->id, $person->email, $person->name, $person->password, $person->roleID]);
 
       if ($result) {
 

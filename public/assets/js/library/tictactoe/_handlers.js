@@ -13,8 +13,13 @@ $(document).on('click', '[data-action]', function(e) {
 
   switch (action) {
     case 'signup':
-      TicTacToe.Person.signup(function(response) {
-      });
+
+      if (Validate.form('#form-signup')) {
+        // form is ok
+        TicTacToe.Person.signup(function(response) {
+        });
+      }
+
       break;
     case 'login':
       TicTacToe.Person.login(function(response) {

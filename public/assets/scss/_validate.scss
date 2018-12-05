@@ -1,0 +1,17 @@
+.validate-form .validate-form--error {
+  background: #fddedf;
+}
+
+.validate-form .validate-form--valid {
+  background: #C5E1A5;
+  border: 0;
+}
+
+.validate-form .validate-form__message {
+  display: inline-block;
+  color: red;
+  padding: 0px 0 10px 15px;
+  font-size: 0.9rem;
+  text-align: left;
+  width: 80%;
+}
