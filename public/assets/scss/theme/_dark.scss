@@ -1,0 +1,48 @@
+body {
+  &.dark {
+    background: $black;
+    color: white;
+
+    a {
+      color: white;
+    }
+
+    .board {
+      .square {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          border-color: white;
+        }
+
+        &:nth-child(7),
+        &:nth-child(8),
+        &:nth-child(9) {
+         border-color: white;
+        }
+
+        &:nth-child(5),
+        &:nth-child(2),
+        &:nth-child(8) {
+          border-color: white;
+          border-color: white;
+        }
+
+        &.o div::before {
+          color: white;
+          border-color: white;
+        }
+
+        &.x div::before,
+        &.x div::after {
+          background: white;
+        }
+
+      }
+    }
+
+    .board-stats {
+      color: white;
+    }
+  }
+}

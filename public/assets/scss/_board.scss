@@ -1,0 +1,121 @@
+.board-wrap {
+  max-width: 500px;
+  max-height: 650px;
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.board {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  max-width: 500px;
+  max-height: 500px;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+
+  &.blink {
+    .square {
+      -webkit-animation: border-blink .3s steps(1) 3;
+      -moz-animation: border-blink .3s steps(1) 3;
+      animation: border-blink .3s steps(1) 3;
+    }
+  }
+
+  .square {
+    position: relative;
+    height: 33%;
+    width: 32%;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    float: left;
+    cursor: pointer;
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      border-bottom: 3px solid $black;
+    }
+
+    &:nth-child(7),
+    &:nth-child(8),
+    &:nth-child(9) {
+     border-top: 3px solid $black;
+    }
+
+    &:nth-child(5),
+    &:nth-child(2),
+    &:nth-child(8) {
+      border-left: 3px solid $black;
+      border-right: 3px solid $black;
+    }
+
+    &.o div,
+    &.x div{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      will-change: transform;
+      -webkit-transform: translate3d(0,0,0);
+      transform: translate3d(0,0,0);
+      -webkit-animation: appear .2s cubic-bezier(.5,1.8,.1,1.1);
+      -moz-animation: appear .2s cubic-bezier(.5,1.8,.1,1.1);
+      animation: appear .2s cubic-bezier(.5,1.8,.1,1.1);
+    }
+
+    &.o.blink div,
+    &.x.blink div {
+      -webkit-animation: blink .3s steps(1) 3;
+      -moz-animation: blink  .3s steps(1) 3;
+      animation: blink .3s steps(1) 3;
+    }
+
+    &.o div::before {
+      content: '';
+      font-size: 15em;
+      color: $black;
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      margin:auto;
+      line-height: 0;
+      border: 15px solid $black;
+      border-radius: 50%;
+      margin: 15px;
+    }
+
+    &.x div::before,
+    &.x div::after {
+      content: '';
+      width: 10%;
+      height: 90%;
+      display: block;
+      background: $black;
+      border-radius: 3px;
+      left: 0;
+      right:0;
+      margin:auto;
+      position: absolute;
+    }
+
+    &.x div::before{
+     transform: rotate(-45deg);
+    }
+
+    &.x div::after{
+     transform: rotate(45deg);
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.btn {
+  display: block;
+  padding: 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-red {
+  color: #F44336;
+}
+
+.btn-back {
+  bottom: initial;
+  top: 17px;
+  left: 20px;
+  background-color: initial;
+  width: 2em;
+  height: 2em;
+  margin: auto;
+  position: absolute;
+  background-image: url('/assets/svg/back.svg');
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
+
+.btn-menu {
+  width: 2em;
+  height: 2em;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-image: url('/assets/svg/user.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  opacity: 0.5;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+}
+
+.btn-language {
+  background-color: white;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  opacity: 0.5;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+
+  &.zh-hant {
+    background-image: url('/assets/svg/flags/zh-hant.svg');
+  }
+  &.en {
+    background-image: url('/assets/svg/flags/en.svg');
+  }
+  &.cy {
+    background-image: url('/assets/svg/flags/cy.svg');
+  }
+  &.ro {
+    background-image: url('/assets/svg/flags/ro.svg');
+  }
+}
+
+.btn-sound {
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  opacity: 0.5;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url('/assets/svg/speaker.svg?1');
+  }
+
+  &.mute::before {
+    background-image: url('/assets/svg/mute.svg?1');
+  }
+}

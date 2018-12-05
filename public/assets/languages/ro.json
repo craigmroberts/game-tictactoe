@@ -1,0 +1,22 @@
+{
+	"player" : "Jucător",
+  "tie" : "Meci",
+  "computer" : "Computer",
+  "seconds" : "Secunde",
+  "best time" : "Cel mai bun timp",
+  "signup" : "Inscrie-te",
+  "login" : "Logare",
+  "play" : "Joaca",
+  "email" : "E-mail",
+  "first name" : "Nume",
+  "last name" : "Numele de familie",
+  "password" : "Parola",
+  "sign up and play" : "Înscrie-te și joci",
+  "sign me up!" : "Inscrie-ma!",
+  "profile" : "Profil",
+  "welcome back" : "Bine ai revenit",
+  "lets play!" : "Să ne jucăm!",
+  "sign out" : "Sign Out",
+  "delete account" : "Șterge cont",
+  "play a game" : "Joacă un joc"
+}

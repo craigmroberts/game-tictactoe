@@ -1,0 +1,23 @@
+form {
+  width: inherit;
+  text-align: center;
+
+  input {
+    padding: 1em;
+    width: 80%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    max-width: 270px;
+    margin-bottom: 5px;
+    -webkit-appearance: none;
+    border-radius: 0;
+
+    &[type=submit] {
+      background: #2196F3;
+      border: 0;
+      color: white;
+      margin-top: 15px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+	"player" : "Player",
+  "tie" : "Tie",
+  "computer" : "Computer",
+  "seconds" : "Seconds",
+  "best time" : "Best Time",
+  "signup" : "Signup",
+  "login" : "Login",
+  "play" : "Play",
+  "email" : "E-mail",
+  "first name" : "First name",
+  "last name" : "Last name",
+  "password" : "Password",
+  "sign up and play" : "Sign up and play",
+  "sign me up!" : "Sign me up!",
+  "profile" : "Profile",
+  "welcome back" : "Welcome back",
+  "lets play!" : "Lets play!",
+  "sign out" : "Sign Out",
+  "delete account" : "Delete Account",
+  "play a game" : "Play a game"
+}

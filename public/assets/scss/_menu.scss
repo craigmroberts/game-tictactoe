@@ -1,0 +1,67 @@
+#language-menu {
+  background: $black;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  z-index: 1;
+
+  .window-title {
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.5em;
+  }
+
+  .window-body {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    a {
+      &.lang-link {
+        float: left;
+        width: 100%;
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-size: 1em;
+        text-align: left;
+        padding: 10px 0 10px 65px;
+        position: relative;
+        line-height: 2em;
+
+        &::before {
+          content: "";
+          background: white;
+          border-radius: 50%;
+          width: 2em;
+          height: 2em;
+          display: inline-block;
+          position: absolute;
+          left: 5%;
+        }
+
+        &.en::before {
+          background-image: url('/assets/svg/flags/en.svg');
+        }
+
+        &.cy::before {
+          background-image: url('/assets/svg/flags/cy.svg');
+        }
+
+        &.ro::before {
+          background-image: url('/assets/svg/flags/ro.svg');
+        }
+
+        &.zh-hant::before {
+          background-image: url('/assets/svg/flags/zh-hant.svg');
+        }
+      }
+    }
+  }
+}

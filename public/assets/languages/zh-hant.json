@@ -1,0 +1,22 @@
+{
+		"player" : "優",
+    "tie" : "平局",
+    "computer" : "電腦",
+    "seconds" : "秒",
+    "best time" : "最好的時間",
+    "signup" : "註冊",
+    "login" : "登錄",
+    "play" : "玩",
+    "email" : "電子郵件",
+    "first name" : "名字",
+    "last name" : "姓",
+    "password" : "密碼",
+    "sign up and play" : "註冊並播放",
+    "sign me up!" : "報名參加！",
+    "profile" : "輪廓",
+    "welcome back" : "歡迎回來",
+    "lets play!" : "讓我們玩！",
+    "sign out" : "登出",
+    "delete account" : "刪除帳戶",
+    "play a game" : "玩個遊戲"
+}
