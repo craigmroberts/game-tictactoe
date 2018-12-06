@@ -12,6 +12,10 @@
 
       switch ($action) {
 
+        case 'getUser':
+          $response = Person::getUser($data->id);
+          break;
+
         case 'login':
           $response = Person::login($data);
           break;

@@ -38,7 +38,41 @@
     public function __desruct() {
     }
 
-    static private function get_by_email($data) {
+    static function getUser($id) {
+      // returns a person object if id matches in db
+
+      $obj = new stdClass();
+      $obj->result = false;
+      $obj->data = false;
+      $obj->message = 'user not found';
+
+      // connect to databaase
+      $db = Database::getInstance();
+      $connection = $db->getConnection();
+
+      // get ststs from player_stats table
+      $sql = "SELECT * FROM person INNER JOIN player_stats ON person.id=player_stats.id WHERE person.id=?";
+      $stmt= $connection->prepare($sql);
+      $stmt->execute([$id]);
+
+      // use a while loop instead of fetchAll for future manipulation
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $arr[] = (object) $row;
+      }
+
+      $obj->result = true;
+      $obj->message = 'success';
+      $obj->data = $arr;
+
+      if (count($arr) === 1) {
+        // return single row as object instead of array
+        $obj->data = $arr[0];
+      }
+
+      return $obj;
+    }
+
+    static private function getByEmail($data) {
       // returns a person object if email matches in db
 
       // connect to databaase
@@ -88,7 +122,7 @@
       }
       */
 
-      $person = self::get_by_email($data);
+      $person = self::getByEmail($data);
 
       if ($person) {
         // person found

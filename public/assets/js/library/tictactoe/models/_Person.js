@@ -1,4 +1,58 @@
 TicTacToe.Person = {
+
+  getByUserID : function(userID, callback) {
+    if (callback) {
+
+      var query_string = App.url.api + 'user/getUser';
+
+      // prepare data
+      App.prepareData();
+
+      var obj = {
+        currentDate : new Date().toLocaleString().replaceAll('/','-').replaceAll(',',''),
+        action: 'getUser',
+        data: btoa(JSON.stringify({id : userID}))
+      };
+
+      jQuery.ajax({
+        url: query_string,
+        type: 'post',
+        data: obj
+      }).always(function(output) {
+
+        output = JSON.parse(atob(output));
+
+        if (output.result) {
+          // login success
+          App.data = output.data;
+
+          // create session with users id
+          localStorage.setItem('sessionID', App.data.id, {
+            expires: 30
+          }); // expires 30 days
+
+          TicTacToe.stats.update(App.data);
+
+          App.updateContent();
+          $('body').addClass('activeUser');
+          View.switch('tictactoe');
+
+          // update stats
+          TicTacToe.stats.updateAll();
+
+          if (App.data.bestScore > 0) {
+            $('.best-time').removeClass('hidden');
+          }
+        } else {
+          // error
+          alert(output.message)
+        }
+
+        return callback(output);
+      })
+    }
+  },
+
   login : function(callback) {
 
     if (callback) {
@@ -25,6 +79,12 @@ TicTacToe.Person = {
         if (output.result) {
           // login success
           App.data = output.data;
+
+          // create session with users id
+          localStorage.setItem('sessionID', App.data.id, {
+            expires: 30
+          }); // expires 30 days
+
           TicTacToe.stats.update(App.data);
 
           App.updateContent();
@@ -70,6 +130,12 @@ TicTacToe.Person = {
         output = JSON.parse(atob(output));
         if (output) {
           App.data = output.data;
+
+          // create session with users id
+          localStorage.setItem('sessionID', App.data.id, {
+            expires: 30
+          }); // expires 30 days
+
           App.updateContent();
           $('body').addClass('activeUser');
           View.switch('tictactoe');
@@ -110,6 +176,8 @@ TicTacToe.Person = {
   signOut : function() {
     $('body').removeClass('activeUser');
     App.data = false;
+    // remove current session
+    localStorage.removeItem('sessionID');
     window.location.href = '/';
   }
 }
