@@ -53,7 +53,7 @@
     // loop through language array and replace placeholders with associated
     // values within the language array
     foreach ($lang as $key => $value) {
-      $html = str_replace("lang:[" . $key . "]", $value, $html);
+      $html = str_replace("{{" . $key . "}}", $value, $html);
     }
 
     return $html;
