@@ -45,8 +45,8 @@
       $db = Database::getInstance();
       $connection = $db->getConnection();
 
-      // get ststs from person_player table
-      $sql = "SELECT * FROM person INNER JOIN person_player ON person.id=person_player.id WHERE person.email=?";
+      // get ststs from player_stats table
+      $sql = "SELECT * FROM person INNER JOIN player_stats ON person.id=player_stats.id WHERE person.email=?";
       $stmt= $connection->prepare($sql);
       $stmt->execute([$data->email]);
 
@@ -132,7 +132,7 @@
 
       if ($result) {
 
-        $sql = "INSERT INTO person_player (id) VALUES (?)";
+        $sql = "INSERT INTO player_stats (id) VALUES (?)";
         $stmt= $connection->prepare($sql);
         $result = $stmt->execute([$person->id]);
 
@@ -155,7 +155,7 @@
       $connection = $db->getConnection();
 
       // delete rows from two tables
-      $sql = "DELETE person, person_player FROM person INNER JOIN person_player WHERE person.id=person_player.id AND person.id=?";
+      $sql = "DELETE person, player_stats FROM person INNER JOIN player_stats WHERE person.id=player_stats.id AND person.id=?";
       $stmt= $connection->prepare($sql);
       $result = $stmt->execute([$this->id]);
 

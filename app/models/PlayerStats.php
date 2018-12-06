@@ -1,6 +1,6 @@
 <?php
 
-  class Player extends Person {
+  class PlayerStats extends Person {
 
     protected $totalGamesPlayed;
     protected $totalWon;
@@ -25,7 +25,7 @@
       $connection = $db->getConnection();
 
       // updates stats in database
-      $stmt= $connection->prepare("UPDATE person_player SET totalGamesPlayed = ?, totalWon = ?, totalTies = ?, totalLost = ?, totalGameTime = ?, averageWin = ?, averageGameTime = ?, bestStreak = ?, bestScore = ? WHERE id=?");
+      $stmt= $connection->prepare("UPDATE player_stats SET totalGamesPlayed = ?, totalWon = ?, totalTies = ?, totalLost = ?, totalGameTime = ?, averageWin = ?, averageGameTime = ?, bestStreak = ?, bestScore = ? WHERE id=?");
       $result = $stmt->execute([$this->totalGamesPlayed, $this->totalWon, $this->totalTies, $this->totalLost, $this->totalGameTime, $this->averageWin, $this->averageGameTime, $this->bestStreak, $this->bestScore, $this->id]);
 
       return $result;

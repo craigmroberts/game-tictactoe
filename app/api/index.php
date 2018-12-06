@@ -27,7 +27,7 @@
           break;
 
         case 'updateStats':
-          $player = new Player();
+          $player = new PlayerStats();
           $player->__set('id', $data->id);
           $player->__set('totalGamesPlayed', $data->totalGamesPlayed);
           $player->__set('totalWon', $data->totalWon);

@@ -23,7 +23,7 @@ var App = {
         var el = $('[data-dynamic]').eq(i);
         var value = el.data('dynamic');
 
-        if (stats[value] !== 'undefined') {
+        if (typeof stats[value] != 'undefined'){
           el.html(stats[value]);
         } else {
           el.html(App.data[value]);
