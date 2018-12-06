@@ -47,7 +47,7 @@
 		<link rel="image_src" href="assets/img/icons/icon-200.png">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" href="/assets/css/style.min.css?9">
+    <link rel="stylesheet" href="/assets/css/style.min.css?9f">
 
   </head>
   <body class="home dark">

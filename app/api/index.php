@@ -26,11 +26,20 @@
           $response = Person::delete();
           break;
 
-        case 'updateBestScore':
+        case 'updateStats':
           $player = new Player();
           $player->__set('id', $data->id);
+          $player->__set('totalGamesPlayed', $data->totalGamesPlayed);
+          $player->__set('totalWon', $data->totalWon);
+          $player->__set('totalTies', $data->totalTies);
+          $player->__set('totalLost', $data->totalLost);
+          $player->__set('totalGameTime', $data->totalGameTime);
+          $player->__set('averageWin', $data->averageWin);
+          $player->__set('averageGameTime', $data->averageGameTime);
+          $player->__set('bestStreak', $data->bestStreak);
           $player->__set('bestScore', $data->bestScore);
-          $response = $player->updateBestScore();
+
+          $response = $player->updateStats();
           break;
       }
 

@@ -5,6 +5,6 @@
     <audio id="aud-note-low" src="/assets/audio/note-low.mp3"></audio>
 
     <script src="/assets/js/library/jquery/jquery.min.js"></script>
-    <script src="/assets/js/scripts.min.js?9"></script>
+    <script src="/assets/js/scripts.min.js?9f"></script>
   </body>
 </html>

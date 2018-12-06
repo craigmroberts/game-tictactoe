@@ -17,9 +17,17 @@ var App = {
   updateContent : function() {
     if (App.data) {
 
+      var stats = TicTacToe.stats.getAll();
+
       for (var i = 0; i < $('[data-dynamic]').length; i++) {
-        var value = $('[data-dynamic]').eq(i).data('dynamic');
-        $('[data-dynamic]').eq(i).html(App.data[value]);
+        var el = $('[data-dynamic]').eq(i);
+        var value = el.data('dynamic');
+
+        if (stats[value] !== 'undefined') {
+          el.html(stats[value]);
+        } else {
+          el.html(App.data[value]);
+        }
       }
     }
   }

@@ -15,21 +15,20 @@ TicTacToe.Timer = {
 
     TicTacToe.Timer.timeDiff /= 1000; // strip the ms
 
-    // compare with best time, update best time
-    if (TicTacToe.Timer.timeDiff < TicTacToe.Timer.bestTime  || !TicTacToe.Timer.bestTime) {
+    if (TicTacToe.status === TicTacToe.playersPiece) {
 
-      if (TicTacToe.Timer.timeDiff < App.data.bestScore || App.data.bestScore == 0) {
+      // compare with best time, update best time
+      if (TicTacToe.Timer.timeDiff < TicTacToe.Timer.bestTime  || !TicTacToe.Timer.bestTime) {
 
-        // update best score
-        TicTacToe.Timer.bestTime = TicTacToe.Timer.timeDiff;
-        $('.board-stats .best-time.hidden').removeClass('hidden');
-        $('.board-stats .best-time').addClass('blink'); // make the board blink
+        if (TicTacToe.Timer.timeDiff < App.data.bestScore || App.data.bestScore == 0) {
 
-        TicTacToe.Player.updateBestScore(function(response) {
-        });
+          // update best score
+          TicTacToe.Timer.bestTime = TicTacToe.Timer.timeDiff;
+          $('.board-stats .best-time.hidden').removeClass('hidden');
+          $('.board-stats .best-time').addClass('blink'); // make the board blink
+        }
       }
     }
-
     return TicTacToe.Timer.timeDiff;
   }
 };

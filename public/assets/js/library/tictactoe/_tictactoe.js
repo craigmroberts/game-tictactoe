@@ -23,10 +23,6 @@ var TicTacToe = {
   //     |   |
 
   score: {
-    // this property handles the game scores
-    computer: 0, // represents the computer score
-    player: 0,  // represents the players score
-    tie: 0, // represents how many game draw/ties there have been. No winners
 
     update: function() {
       // this function updates the games scoreboard onscreen
@@ -35,27 +31,18 @@ var TicTacToe = {
       // only update the scoreboard if the game has been won or there is a tie.
       if (TicTacToe.status !== '?') {
 
-        // check if the game is a tie
-        if (TicTacToe.status === 't') {
-          // it was a tie/draw, increment score + 1
-          TicTacToe.score.tie++;
-        } else if (TicTacToe.status === TicTacToe.playersPiece) {
-          // player won, increment score + 1
-          TicTacToe.score.player++;
-        } else if (TicTacToe.status === TicTacToe.computersPiece) {
-          // computer won, increment score + 1
-          TicTacToe.score.computer++;
-        }
-
+        App.updateContent();
+/*
         // update the scores on the scoreboard
-        $('.board-stats .tie .score').html(TicTacToe.score.tie);
-        $('.board-stats .player .score').html(TicTacToe.score.player);
-        $('.board-stats .computer .score').html(TicTacToe.score.computer);
+        $('.board-stats .tie .score').html(TicTacToe.stats.totalTies);
+        $('.board-stats .player .score').html(TicTacToe.stats.totalWon);
+        $('.board-stats .computer .score').html(TicTacToe.stats.totalLost);
 
         // update best time
         if (TicTacToe.Timer.bestTime) {
           $('.board-stats .best-time .score').html(TicTacToe.Timer.bestTime);
         }
+        */
       }
     }
   },
@@ -103,8 +90,9 @@ var TicTacToe = {
     // check if there is a tie
     TicTacToe.check.tie();
 
-    // update the game score after each turn
-    TicTacToe.score.update();
+    if (TicTacToe.status !== '?') {
+      TicTacToe.Timer.end();
+    }
 
     // play the appropriate sound
     TicTacToe.sound.play();
@@ -121,8 +109,23 @@ var TicTacToe = {
       }, TicTacToe.computerPlaySpeed);
     }
 
-    // check if the board needs to be reset
-    TicTacToe.reset();
+    if (TicTacToe.status !== '?') {
+      // if the game has ended
+
+      // update all stats
+      TicTacToe.stats.updateAll();
+
+      // update the game score after each turn
+      TicTacToe.score.update();
+
+      TicTacToe.Player.updateStats(function(response) {
+
+      });
+
+      // check if the board needs to be reset
+      TicTacToe.reset();
+    }
+
   },
 
   check: {
@@ -167,11 +170,6 @@ var TicTacToe = {
       // check if there is a winner
       if (winner) {
         // the result has found a winning line
-
-        if (winner.gamePiece === TicTacToe.playersPiece) {
-          // stop timer if the winner is a player
-          TicTacToe.Timer.end();
-        }
 
         // update the game status to won by adding the
         // winning players piece. x or o
@@ -260,8 +258,6 @@ var TicTacToe = {
 
   reset: function() {
 
-    if (TicTacToe.status !== '?') {
-
       TicTacToe.boardToString = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
       setTimeout(function() {
@@ -271,7 +267,6 @@ var TicTacToe = {
         $('.blink').removeClass('blink');
         TicTacToe.status = false;
       }, 1000);
-    }
   },
 
   getAvailableSquares: function() {
