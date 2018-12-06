@@ -22,8 +22,12 @@ $(document).on('click', '[data-action]', function(e) {
 
       break;
     case 'login':
-      TicTacToe.Person.login(function(response) {
-      });
+      if (Validate.form('#form-login')) {
+        // form is ok
+        TicTacToe.Person.login(function(response) {
+        });
+      }
+
       break;
     case 'signout':
       TicTacToe.Person.signOut(function(response) {
