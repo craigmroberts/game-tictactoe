@@ -1,17 +1,22 @@
 .validate-form .validate-form--error {
-  background: #fddedf;
+  background-image: url('/assets/svg/cross.svg');
+  background-repeat: no-repeat;
+  background-position: 97% 10px;
+  background-size: 20px;
 }
 
 .validate-form .validate-form--valid {
-  background: #C5E1A5;
-  border: 0;
+  background-image: url('/assets/svg/check.svg');
+  background-repeat: no-repeat;
+  background-position: 97% 10px;
+  background-size: 20px;
 }
 
 .validate-form .validate-form__message {
   display: inline-block;
   color: red;
-  padding: 0px 0 10px 15px;
+  padding: 0 0 10px 0;
   font-size: 0.9rem;
   text-align: left;
-  width: 80%;
+  width: 82%;
 }

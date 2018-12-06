@@ -42,7 +42,7 @@ var Validate = {
 
       if (!isEmailValid) {
 
-        errorMessage = 'Please enter a valid email address';
+        errorMessage = 'Enter a valid email address';
       }
     }
 
@@ -50,7 +50,7 @@ var Validate = {
     if (type === 'password') {
 
       if(value.length < 6) {
-        errorMessage = 'Password must contain at least six characters';
+        errorMessage = 'The password is too short';
 
       } else if (!/[0-9]/.test(value)) {
         errorMessage = 'Password must contain a number';
@@ -66,7 +66,7 @@ var Validate = {
     // validate required inputs
     if (el.attr('required')) {
       if (value.length <= 0) {
-        errorMessage = 'Please enter ' + name;
+        errorMessage = 'Enter your ' + name;
       }
     }
 
@@ -82,7 +82,7 @@ var Validate = {
   }
 }
 
-$(document).on('keyup', '.validate-form .validate-form--error', function(e) {
+$(document).on('keyup', '.validate-form input', function(e) {
   Validate.input($(this));
 });
 
