@@ -5,6 +5,8 @@ var Validate = {
 
     var errors = [];
 
+    Validate.clearForm();
+
     // loop through validate inputs
     for (var i = 0; i < length; i++) {
       var input = $(form + ' input:not([type=submit])').eq(i);
@@ -22,6 +24,18 @@ var Validate = {
     return true;
   },
 
+  clearForm : function() {
+    $('.validate-form--error').removeClass('validate-form--error');
+    $('.validate-form--valid').removeClass('validate-form--valid');
+    $('.validate-form__message').remove();
+  },
+
+  clearInput : function(el) {
+    el.removeClass('validate-form--error');
+    el.removeClass('validate-form--valid');
+    el.next('.validate-form__message').remove();
+  },
+
   input : function(el) {
 
     var value = el.val();
@@ -29,10 +43,7 @@ var Validate = {
     var type = el.attr('type');
     var errorMessage = false;
 
-    el.removeClass('validate-form--error');
-    el.removeClass('validate-form--valid');
-
-    el.next('.validate-form__message').remove();
+    Validate.clearInput(el);
 
     // validate email inputs
     if (type === 'email') {

@@ -2,6 +2,9 @@ var View = {
   currentView : false,
   switch : function(view) {
 
+    // clear any validation
+    Validate.clearForm();
+
     // update current view
     View.currentView = view;
 
