@@ -64,7 +64,7 @@ TicTacToe.Person = {
       }).always(function(output) {
         output = JSON.parse(atob(output));
         if (output) {
-          App.data = output;
+          App.data = output.data;
           App.updateContent();
           $('body').addClass('activeUser');
           View.switch('tictactoe');
