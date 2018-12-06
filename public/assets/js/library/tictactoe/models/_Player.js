@@ -1,17 +1,18 @@
 TicTacToe.Player = {
 
-    updateBestScore : function(callback) {
+    updateStats : function(callback) {
 
       if (callback) {
 
         var query_string = App.url.api + 'user/update-score';
 
-        App.data.bestScore = TicTacToe.Timer.bestTime;
+        var data = TicTacToe.stats.getAll();
+        data.id = App.data.id;
 
         var obj = {
           currentDate : new Date().toLocaleString().replaceAll('/','-').replaceAll(',',''),
-          action: 'updateBestScore',
-          data: btoa(JSON.stringify(App.data))
+          action: 'updateStats',
+          data: btoa(JSON.stringify(data))
         };
 
         jQuery.ajax({

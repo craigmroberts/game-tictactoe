@@ -25,9 +25,14 @@ TicTacToe.Person = {
         if (output.result) {
           // login success
           App.data = output.data;
+          TicTacToe.stats.update(App.data);
+
           App.updateContent();
           $('body').addClass('activeUser');
           View.switch('tictactoe');
+
+          // update stats
+          TicTacToe.stats.updateAll();
 
           if (App.data.bestScore > 0) {
             $('.best-time').removeClass('hidden');

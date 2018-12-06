@@ -7,3 +7,4 @@
 // @codekit-prepend "./models/_Person.js";
 // @codekit-prepend "./models/_Player.js";
 // @codekit-prepend "_handlers.js";
+// @codekit-prepend "_stats.js";
