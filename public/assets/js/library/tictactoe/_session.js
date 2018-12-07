@@ -1,6 +1,6 @@
 var sessionID = localStorage.getItem('sessionID');
 if (sessionID) {
-  TicTacToe.Person.getByUserID(sessionID,function(response) {
+  TicTacToe.User.getByUserID(sessionID,function(response) {
     console.log(sessionID);
   });
 

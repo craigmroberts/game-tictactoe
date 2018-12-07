@@ -1,6 +1,6 @@
 <?php
 
-  class Person {
+  class User {
 
     protected $id;
     protected $name;
@@ -39,7 +39,7 @@
     }
 
     static function getUser($id) {
-      // returns a person object if id matches in db
+      // returns a user object if id matches in db
 
       $obj = new stdClass();
       $obj->result = false;
@@ -51,7 +51,7 @@
       $connection = $db->getConnection();
 
       // get ststs from player_stats table
-      $sql = "SELECT * FROM person INNER JOIN player_stats ON person.id=player_stats.id WHERE person.id=?";
+      $sql = "SELECT * FROM user INNER JOIN player_stats ON user.id=player_stats.id WHERE user.id=?";
       $stmt= $connection->prepare($sql);
       $stmt->execute([$id]);
 
@@ -73,14 +73,14 @@
     }
 
     static private function getByEmail($data) {
-      // returns a person object if email matches in db
+      // returns a user object if email matches in db
 
       // connect to databaase
       $db = Database::getInstance();
       $connection = $db->getConnection();
 
       // get ststs from player_stats table
-      $sql = "SELECT * FROM person INNER JOIN player_stats ON person.id=player_stats.id WHERE person.email=?";
+      $sql = "SELECT * FROM user INNER JOIN player_stats ON user.id=player_stats.id WHERE user.email=?";
       $stmt= $connection->prepare($sql);
       $stmt->execute([$data->email]);
 
@@ -97,11 +97,11 @@
       return $arr;
     }
 
-    static private function verifyPassword($passwordString, $personsPassword) {
+    static private function verifyPassword($passwordString, $usersPassword) {
       // check if the password string matches the users in the db
 
         // check it the password matches that users hash
-        if (self::verifyEncryptedString($passwordString, $personsPassword)) {
+        if (self::verifyEncryptedString($passwordString, $usersPassword)) {
           return true;
         }
         // incorrect password
@@ -122,16 +122,16 @@
       }
       */
 
-      $person = self::getByEmail($data);
+      $user = self::getByEmail($data);
 
-      if ($person) {
-        // person found
+      if ($user) {
+        // user found
 
         // check if password is ok
-        if (self::verifyPassword($data->password, $person->password)) {
+        if (self::verifyPassword($data->password, $user->password)) {
           // login success
           $obj->result = true;
-          $obj->data = $person;
+          $obj->data = $user;
           $obj->message = 'success';
         }
 
@@ -143,7 +143,7 @@
 
     static public function signup($data) {
 
-      $person = new Person();
+      $user = new User();
 
       if (strlen($data->password) < self::$minPasswordLength) {
         $obj = new stdClass();
@@ -153,43 +153,43 @@
         return $obj;
       }
 
-      $person->__set('email', $data->email);
-      $person->__set('name', $data->name);
-      $person->__set('password', $data->password);
+      $user->__set('email', $data->email);
+      $user->__set('name', $data->name);
+      $user->__set('password', $data->password);
 
       $db = Database::getInstance();
       $connection = $db->getConnection();
 
-      $sql = "INSERT INTO person (id, email, name, password, role_id) VALUES (?, ?, ?, ?, ?)";
+      $sql = "INSERT INTO user (id, email, name, password, role_id) VALUES (?, ?, ?, ?, ?)";
       $stmt= $connection->prepare($sql);
-      $result = $stmt->execute([$person->id, $person->email, $person->name, $person->password, $person->roleID]);
+      $result = $stmt->execute([$user->id, $user->email, $user->name, $user->password, $user->roleID]);
 
       if ($result) {
 
         $sql = "INSERT INTO player_stats (id) VALUES (?)";
         $stmt= $connection->prepare($sql);
-        $result = $stmt->execute([$person->id]);
+        $result = $stmt->execute([$user->id]);
 
         if ($result) {
-          return Person::login($data);
+          return User::login($data);
         }
       }
 
       return $result;
     }
 
-    static public function signOut($person) {
+    static public function signOut($user) {
       // log the user out
     }
 
-    static public function delete($person) {
+    static public function delete($user) {
 
       // delete user account
       $db = Database::getInstance();
       $connection = $db->getConnection();
 
       // delete rows from two tables
-      $sql = "DELETE person, player_stats FROM person INNER JOIN player_stats WHERE person.id=player_stats.id AND person.id=?";
+      $sql = "DELETE user, player_stats FROM user INNER JOIN player_stats WHERE user.id=player_stats.id AND user.id=?";
       $stmt= $connection->prepare($sql);
       $result = $stmt->execute([$this->id]);
 

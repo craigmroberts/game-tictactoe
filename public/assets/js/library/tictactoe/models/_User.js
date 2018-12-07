@@ -1,4 +1,4 @@
-TicTacToe.Person = {
+TicTacToe.User = {
 
   getByUserID : function(userID, callback) {
     if (callback) {

@@ -31,6 +31,5 @@
   }
 
   // include all models
-  foreach (glob(ROOT_DIR . "/app/models/*.php") as $filename) {
-      require_once $filename;
-  }
+  require_once ROOT_DIR . "/app/models/User.php";
+  require_once ROOT_DIR . "/app/models/PlayerStats.php";

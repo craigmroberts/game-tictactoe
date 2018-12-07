@@ -16,7 +16,7 @@ $(document).on('click', '[data-action]', function(e) {
 
       if (Validate.form('#form-signup')) {
         // form is ok
-        TicTacToe.Person.signup(function(response) {
+        TicTacToe.User.signup(function(response) {
         });
       }
 
@@ -24,19 +24,19 @@ $(document).on('click', '[data-action]', function(e) {
     case 'login':
       if (Validate.form('#form-login')) {
         // form is ok
-        TicTacToe.Person.login(function(response) {
+        TicTacToe.User.login(function(response) {
         });
       }
 
       break;
     case 'signout':
-      TicTacToe.Person.signOut(function(response) {
+      TicTacToe.User.signOut(function(response) {
 
       });
       break;
     case 'delete':
-      TicTacToe.Person.delete(function(response) {
-        TicTacToe.Person.signOut(function(response) {
+      TicTacToe.User.delete(function(response) {
+        TicTacToe.User.signOut(function(response) {
 
         });
       });

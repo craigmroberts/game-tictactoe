@@ -1,6 +1,6 @@
 <?php
 
-  class PlayerStats extends Person {
+  class PlayerStats extends User {
 
     protected $totalGamesPlayed;
     protected $totalWon;

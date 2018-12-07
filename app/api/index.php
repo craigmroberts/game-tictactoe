@@ -13,37 +13,37 @@
       switch ($action) {
 
         case 'getUser':
-          $response = Person::getUser($data->id);
+          $response = User::getUser($data->id);
           break;
 
         case 'login':
-          $response = Person::login($data);
+          $response = User::login($data);
           break;
 
         case 'signup':
-          $response = Person::signup($data);
+          $response = User::signup($data);
           break;
 
         case 'delete':
-          $person = new Person();
+          $person = new User();
           $person->__set('id', $data->id);
-          $response = Person::delete();
+          $response = User::delete();
           break;
 
         case 'updateStats':
-          $player = new PlayerStats();
-          $player->__set('id', $data->id);
-          $player->__set('totalGamesPlayed', $data->totalGamesPlayed);
-          $player->__set('totalWon', $data->totalWon);
-          $player->__set('totalTies', $data->totalTies);
-          $player->__set('totalLost', $data->totalLost);
-          $player->__set('totalGameTime', $data->totalGameTime);
-          $player->__set('averageWin', $data->averageWin);
-          $player->__set('averageGameTime', $data->averageGameTime);
-          $player->__set('bestStreak', $data->bestStreak);
-          $player->__set('bestScore', $data->bestScore);
+          $playerStats = new PlayerStats();
+          $playerStats->__set('id', $data->id);
+          $playerStats->__set('totalGamesPlayed', $data->totalGamesPlayed);
+          $playerStats->__set('totalWon', $data->totalWon);
+          $playerStats->__set('totalTies', $data->totalTies);
+          $playerStats->__set('totalLost', $data->totalLost);
+          $playerStats->__set('totalGameTime', $data->totalGameTime);
+          $playerStats->__set('averageWin', $data->averageWin);
+          $playerStats->__set('averageGameTime', $data->averageGameTime);
+          $playerStats->__set('bestStreak', $data->bestStreak);
+          $playerStats->__set('bestScore', $data->bestScore);
 
-          $response = $player->updateStats();
+          $response = $playerStats->updateStats();
           break;
       }
 
