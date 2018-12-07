@@ -21,5 +21,5 @@
       <div class="stats__row"><span class="stats__title">Fastest Win Time</span><strong data-dynamic="bestScore"></strong></div>
     </div>
   </div>
-  <div class="btn__language btn__language--{language}"></div>
+  <a class="btn__language icon icon--{language}" href='#/menu-language'></a>
 </div>

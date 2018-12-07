@@ -1,11 +1,16 @@
 @media (max-width: 425px) {
+
   .board-wrap {
-      max-width: 290px;
-      max-height: 290px;
+    max-width: 290px;
+    max-height: 290px;
   }
+
   .board-stats {
+
     .col {
+
       span {
+
         &.title {
           font-size: 0.4em;
         }
@@ -18,7 +23,9 @@
 }
 
 @media (min-width: 425px) {
+
   .page {
+
     .content {
       max-width: 300px;
       position: absolute;

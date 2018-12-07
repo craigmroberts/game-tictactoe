@@ -46,10 +46,7 @@
   }
 
   &__language {
-
-    background-color: white;
     border-radius: 50%;
-    width: 2em;
     height: 2em;
     position: absolute;
     bottom: 10px;
@@ -64,19 +61,6 @@
     opacity: 0.5;
     -webkit-opacity: 0.5;
     -moz-opacity: 0.5;
-
-    &--zh-hant {
-      background-image: url('/assets/svg/flags/zh-hant.svg');
-    }
-    &--en {
-      background-image: url('/assets/svg/flags/en.svg');
-    }
-    &--cy {
-      background-image: url('/assets/svg/flags/cy.svg');
-    }
-    &--ro {
-      background-image: url('/assets/svg/flags/ro.svg');
-    }
   }
 
   &__sound {

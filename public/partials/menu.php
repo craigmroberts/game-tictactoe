@@ -1,9 +1,14 @@
-<div id="language-menu" class="hidden">
-  <div class="window-title">Choose Language</div>
-  <div class="window-body">
-    <a class="lang-link en" href="/?lang=en">English</a>
-    <a class="lang-link ro" href="/?lang=ro">Romanian</a>
-    <a class="lang-link zh-hant" href="/?lang=zh-hant">Taiwan</a>
-    <a class="lang-link cy" href="/?lang=cy">Welsh</a>
+<div id="menu-language" class="page">
+  <div class="page__head">
+    <h2 class="page_title">{{Choose Language}}</h2>
+  </div>
+  <div class="page__content">
+
+    <ul class="icon-list">
+      <li><a class="icon icon--en" href="/?lang=en">English</a></li>
+      <li><a class="icon icon--ro" href="/?lang=ro">Romanian</a></li>
+      <li><a class="icon icon--zh-hant" href="/?lang=zh-hant">Taiwan</a></li>
+      <li><a class="icon icon--cy" href="/?lang=cy">Welsh</a></li>
+    </ul>
   </div>
 </div>

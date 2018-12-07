@@ -11,5 +11,5 @@
       <input type="submit" data-action="login" value="{{Login}}"/>
     </form>
   </div>
-  <div class="btn__language btn__language--{language}"></div>
+  <a class="btn__language icon icon--{language}" href='#/menu-language'></a>
 </div>

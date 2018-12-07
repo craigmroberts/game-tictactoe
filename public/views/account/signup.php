@@ -12,5 +12,5 @@
       <input type="submit" value="{{Sign me up!}}" data-action="signup" />
     </form>
   </div>
-  <div class="btn__language btn__language--{language}"></div>
+  <a class="btn__language icon icon--{language}" href='#/menu-language'></a>
 </div>

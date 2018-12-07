@@ -1,0 +1,29 @@
+.icon {
+
+  &::before {
+    content: "";
+    background: white;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+    position: absolute;
+    left: 5%;
+  }
+
+  &--en::before {
+    background-image: url('/assets/svg/flags/en.svg');
+  }
+
+  &--cy::before {
+    background-image: url('/assets/svg/flags/cy.svg');
+  }
+
+  &--ro::before {
+    background-image: url('/assets/svg/flags/ro.svg');
+  }
+
+  &--zh-hant::before {
+    background-image: url('/assets/svg/flags/zh-hant.svg');
+  }
+}
