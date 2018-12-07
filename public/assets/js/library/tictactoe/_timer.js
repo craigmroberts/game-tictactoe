@@ -24,8 +24,6 @@ TicTacToe.Timer = {
 
           // update best score
           TicTacToe.Timer.bestTime = TicTacToe.Timer.timeDiff;
-          $('.board-stats .best-time.hidden').removeClass('hidden');
-          $('.board-stats .best-time').addClass('blink'); // make the board blink
         }
       }
     }

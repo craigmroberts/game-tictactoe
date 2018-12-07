@@ -1,16 +1,19 @@
+
 @import './_variables';
 @import './_keyframes';
-@import './_general';
-@import './_buttons';
+
+@import './_base';
+
+@import './_page';
 @import './_board';
-@import './_menu';
-@import './_view';
+@import './_btn';
 @import './_form';
-@import './_validate';
 @import './_stats';
+@import './_validate';
+@import './_menu';
 
 // Theme files
-@import './theme/dark';
+@import './themes/_dark';
 
 // media queries always at the end
 @import './_mediaQueries';

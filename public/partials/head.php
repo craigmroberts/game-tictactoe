@@ -50,6 +50,6 @@
     <link rel="stylesheet" href="/assets/css/style.min.css?9f">
 
   </head>
-  <body class="home dark">
+  <body class="home page--dark">
 
     <?php require_once '../partials/menu.php';?>

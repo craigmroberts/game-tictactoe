@@ -8,5 +8,5 @@
       <a href="#/tictactoe/" class="btn">{{Play}}</a>
     </div>
   </div>
-  <div class="btn-language {language}"></div>
+  <div class="btn__language btn__language--{language}"></div>
 </div>
