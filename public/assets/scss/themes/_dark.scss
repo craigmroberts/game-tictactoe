@@ -1,0 +1,31 @@
+.page--dark {
+  background: $black;
+  color: white;
+
+  a {
+    color: white;
+  }
+
+  .board {
+    &__square {
+
+
+      &--b-border,
+      &--t-border,
+      &--lr-border {
+        border-color: white;
+        border-color: white;
+      }
+
+      &__x div::before,
+      &__x div::after {
+        background: white;
+      }
+
+      &__o div::before {
+        color: white;
+        border-color: white;
+      }
+    }
+  }
+}

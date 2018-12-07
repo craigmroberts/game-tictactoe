@@ -4,7 +4,7 @@ var TicTacToe = {
   currentMove: false, // currentMove represents which players turn it currently is, it will either be "player" or "computer"
   playersPiece: 'x', // represents the user/players piece, either x or o.
   computersPiece : (this.playersPiece === 'o') ? 'x' : 'o', // represents the computers piece, always opposite to players
-  square: '.board .square', // the board square class
+  square: '.board__square', // the board square class
   status: false,
   // represents the game status.
   // TicTacToe.status is:
@@ -80,7 +80,7 @@ var TicTacToe = {
     }
 
     // add current players piece to board
-    $(TicTacToe.square).eq(squareIndx).addClass(currentGamePiece);
+    $(TicTacToe.square).eq(squareIndx).addClass('board__square--taken board__square__' + currentGamePiece);
     // update boardString to match the board game thats being played
     TicTacToe.boardToString[squareIndx] = currentGamePiece;
 
@@ -147,7 +147,7 @@ var TicTacToe = {
         TicTacToe.status = 't';
 
         // animate the board. Make the borders blink/flash
-        $(TicTacToe.board).addClass('blink');
+        $(TicTacToe.board).addClass('board--blink-borders');
 
         return true;
       }
@@ -175,10 +175,13 @@ var TicTacToe = {
         // winning players piece. x or o
         TicTacToe.status = winner.gamePiece;
 
+        // animate the board. Make the borders blink/flash
+        $(TicTacToe.board).addClass('board--blink-winner');
+
         // make the winning row blink
         for (var i = 0; i < 3; i++) {
           // loop through the winning cells and add blink class
-          $(TicTacToe.square).eq(winner.cells[i]).addClass('blink');
+          $(TicTacToe.square).eq(winner.cells[i]).addClass('board__square--win');
         }
       }
     },
@@ -262,9 +265,9 @@ var TicTacToe = {
 
       setTimeout(function() {
         // remove all pieces
-        $('.o').removeClass('o');
-        $('.x').removeClass('x');
-        $('.blink').removeClass('blink');
+        $('.board').removeClass('board--blink-winner board--blink-borders');
+        $('.board__square').removeClass('board__square--taken board__square--win board__square__o board__square__x');
+
         TicTacToe.status = false;
       }, 1000);
   },

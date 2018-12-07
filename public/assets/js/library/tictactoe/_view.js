@@ -10,7 +10,7 @@ var View = {
 
     // hide current views
     $('body').addClass(view);
-    $('.page.active').removeClass('active');
-    $('#' + view).addClass('active');
+    $('.page--active').removeClass('page--active');
+    $('#' + view).addClass('page--active');
   }
 }

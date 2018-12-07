@@ -45,21 +45,21 @@ $(document).on('click', '[data-action]', function(e) {
 });
 
 $(document).on('click', TicTacToe.square, function() {
-  if (!$(this).hasClass('o') && !$(this).hasClass('x')) {
+  if (!$(this).hasClass('board__square--taken')) {
     TicTacToe.currentMove = 'player';
     TicTacToe.takeTurn($(this));
   }
 });
 
-$(document).on('click', '.btn-sound', function() {
-  if ($(this).hasClass('mute')) {
+$(document).on('click', '.btn__sound', function() {
+  if ($(this).hasClass('btn__sound--mute')) {
     TicTacToe.sound.isMuted = false;
   } else {
     TicTacToe.sound.isMuted = true;
   }
-  $(this).toggleClass('mute');
+  $(this).toggleClass('btn__sound--mute');
 });
 
-$(document).on('click', '.btn-language', function() {
+$(document).on('click', '.btn__language', function() {
   $('#language-menu').toggleClass('hidden');
 });
