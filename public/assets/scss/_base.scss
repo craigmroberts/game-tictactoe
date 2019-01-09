@@ -10,7 +10,7 @@ body {
 
 body {
 
-  &.loggedIn {
+  .loggedIn {
     display: none;
   }
 

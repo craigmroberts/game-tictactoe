@@ -6,4 +6,5 @@ if (sessionID) {
 
 } else {
   console.log('no session');
+  View.switch('home');
 }
