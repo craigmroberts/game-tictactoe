@@ -9,4 +9,4 @@ This is a two player tic tac toe game that logs your score and name into the dat
 - Update / edit username.
 - Delete your account.
 
-View and play the game here<br/><a href='https://tictactoe.craigmroberts.com'>Play Tic Tac Toe!</a>
+View and play the game here<br/><a href='https://work.craigmroberts.com/tictactoe/'>Play Tic Tac Toe!</a>

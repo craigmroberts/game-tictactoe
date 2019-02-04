@@ -49,6 +49,7 @@
 
     // replace placeholder with values
     $html = str_replace("{language}", getLanguage(), $html);
+    $html = str_replace("{assets}", ASSETS_DIR, $html);
 
     // loop through language array and replace placeholders with associated
     // values within the language array

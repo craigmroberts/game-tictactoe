@@ -5,14 +5,15 @@
   define('LANG', 'en'); // represents the default language of the page
 
   // Set the website url
-  define('ROOT_URL',    'https://' . getenv('HTTP_HOST') . '/' );
+  define('SUB_DIR',   'tictactoe/');
+  define('ROOT_URL',    'https://' . getenv('HTTP_HOST') . '/' . SUB_DIR);
 
   // DIRECTORIES
   define('ROOT_DIR',    dirname(__FILE__,3) . '/');
   define('MODEL_DIR',   ROOT_DIR . 'app/model/');
   define('VIEW_DIR',    ROOT_DIR . 'app/view/');
   define('PARTS_DIR',   ROOT_DIR . 'app/parts/');
-  define('ASSETS_DIR',  ROOT_DIR . 'assets/');
+  define('ASSETS_DIR',  ROOT_URL . 'assets/');
   define('API_DIR',     ROOT_DIR . 'api/');
 
   if (DEBUG) {

@@ -1,14 +1,14 @@
 .validate-form {
 
   &--error {
-    background-image: url('/assets/svg/cross.svg');
+    background-image: url('../svg/cross.svg');
     background-repeat: no-repeat;
     background-position: 97% 14px;
     background-size: 14px;
   }
 
   &--valid {
-    background-image: url('/assets/svg/check.svg');
+    background-image: url('../svg/check.svg');
     background-repeat: no-repeat;
     background-position: 97% 12px;
     background-size: 17px;

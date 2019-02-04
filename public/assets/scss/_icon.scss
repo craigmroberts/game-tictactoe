@@ -12,18 +12,18 @@
   }
 
   &--en::before {
-    background-image: url('/assets/svg/flags/en.svg');
+    background-image: url('../svg/flags/en.svg');
   }
 
   &--cy::before {
-    background-image: url('/assets/svg/flags/cy.svg');
+    background-image: url('../svg/flags/cy.svg');
   }
 
   &--ro::before {
-    background-image: url('/assets/svg/flags/ro.svg');
+    background-image: url('../svg/flags/ro.svg');
   }
 
   &--zh-hant::before {
-    background-image: url('/assets/svg/flags/zh-hant.svg');
+    background-image: url('../svg/flags/zh-hant.svg');
   }
 }

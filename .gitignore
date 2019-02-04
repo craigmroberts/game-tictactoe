@@ -7,8 +7,8 @@
 *.swo
 *.swp
 *.vi
-*.min.css
-*.min.js
+# *.min.css
+# *.min.js
 *~
 *.sass-cache
 node_modules/

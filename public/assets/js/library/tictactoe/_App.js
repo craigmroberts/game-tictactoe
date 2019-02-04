@@ -1,8 +1,8 @@
 var App = {
   data : false,
   url : {
-    root : 'https://tictactoe.craigmroberts.com/',
-    api : '/api/'
+    root : 'https://work.craigmroberts.com/tictactoe/',
+    api : 'https://work.craigmroberts.com/tictactoe/api/'
   },
   prepareData : function() {
 
